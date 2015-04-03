@@ -26,7 +26,7 @@ func New(size int, key string, more ...string) (*Aes, error) {
     if len(more) > 0 {
         iv = []byte(more[0])
     } else {
-        iv = make([]byte, size)
+        iv = make([]byte, 16)
     }
     aes, err := aes.NewCipher(padded)
     if err != nil {
